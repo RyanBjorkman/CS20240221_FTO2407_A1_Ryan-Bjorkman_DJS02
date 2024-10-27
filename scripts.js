@@ -26,7 +26,7 @@ form.addEventListener("submit", (event) => {
 
 
   // Check if the divider is 0
-  if (divider === 0) {
+  if (dividerNumber === 0) {
     console.error("Division by 0 error!");
     result.innerText = "Division not performed. Invalid number provided. Try again!";
     return;
