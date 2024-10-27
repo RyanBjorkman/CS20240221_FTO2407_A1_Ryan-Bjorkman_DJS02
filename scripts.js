@@ -9,7 +9,7 @@ form.addEventListener("submit", (event) => {
   // check both inputs are provided
   if (!dividend || !divider) {
     console.error("Both fields are required!");
-    result.innerText = "Both fields are required!";
+    result.innerText = "Division not performed. Both values are required in inputs. Try again!";
     return;
   }
 
@@ -27,8 +27,8 @@ form.addEventListener("submit", (event) => {
 
   // Check if the divider is 0
   if (divider === 0) {
-    console.error("Divider can't be 0!");
-    result.innerText = "Divider can't be 0!";
+    console.error("Division by 0 error!");
+    result.innerText = "Division not performed. Invalid number provided. Try again!";
     return;
   }
 
