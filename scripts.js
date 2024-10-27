@@ -6,12 +6,22 @@ form.addEventListener("submit", (event) => {
   const entries = new FormData(event.target);
   const { dividend, divider } = Object.fromEntries(entries);
 
-  // check both inputs
+  // check both inputs are provided
   if (!dividend || !divider) {
     console.error("Both fields are required!");
     result.innerText = "Both fields are required!";
     return;
   }
+
+  const dividedNumber = Number(dividend);
+  const dividerNumber = Number(divider);
+
+  // Check if the inputs are numbers
+  if (isNaN(dividedNumber) || isNaN(dividerNumber)) {
+    console.error("Both fields should be numbers!");
+    document.body.innerHTML = "Something critical went wrong. Please reload the page.";
+    throw new Error("Program crashed due to invalid input.");
+    
 
 
   // Check if the divider is 0
