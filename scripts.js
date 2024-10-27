@@ -21,6 +21,7 @@ form.addEventListener("submit", (event) => {
     console.error("Both fields should be numbers!");
     document.body.innerHTML = "Something critical went wrong. Please reload the page.";
     throw new Error("Program crashed due to invalid input.");
+  }
     
 
 
@@ -31,6 +32,10 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  result.innerText = dividend / divider;
+  // display the result with whole numbers only
+  const quotient = dividedNumber / dividerNumber;
+
+  // math.floor() is used to diaplay the whole number only
+  result.innerText = Math.floor(quotient);
 });
 
